@@ -1,4 +1,4 @@
-const weather = {
+{
     "latitude": -6.125,
     "longitude": 106.875,
     "generationtime_ms": 0.01800060272216797,
@@ -40,4 +40,4 @@ const weather = {
         26.6
       ]
     }
-}
+  }
