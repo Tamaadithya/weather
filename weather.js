@@ -1,43 +1,16 @@
-const weather = {
-    "latitude": -6.125,
-    "longitude": 106.875,
-    "generationtime_ms": 0.01800060272216797,
-    "utc_offset_seconds": 25200,
-    "timezone": "Asia/Bangkok",
-    "timezone_abbreviation": "+07",
-    "elevation": 15.0,
-    "daily_units": {
-      "time": "iso8601",
-      "temperature_2m_max": "°C",
-      "temperature_2m_min": "°C"
-    },
-    "daily": {
-      "time": [
-        "2024-05-27",
-        "2024-05-28",
-        "2024-05-29",
-        "2024-05-30",
-        "2024-05-31",
-        "2024-06-01",
-        "2024-06-02"
-      ],
-      "temperature_2m_max": [
-        34.7,
-        34.4,
-        34.9,
-        35.4,
-        34.9,
-        33.9,
-        34.9
-      ],
-      "temperature_2m_min": [
-        26.4,
-        26.4,
-        26.4,
-        26.8,
-        27.2,
-        26.9,
-        26.6
-      ]
-    }
+async function fetchData() {
+  let searchCity = 'jepang'
+  let apiKey = `APIKEY`
+  const responseOpenWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}`)
+  const responseOpenWeatherJson = await responseOpenWeather.json()
+  console.log(responseOpenWeatherJson, "<< response Open Weather Json")
+
+  let lat = responseOpenWeatherJson.coord.lat;
+  let lon = responseOpenWeatherJson.coord.lon;
+  
+  const responseOpenMeteo = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FBangkok`)
+  const responseOpenMeteoJson = await responseOpenMeteo.json()
+  console.log(responseOpenMeteoJson, "<< response Open Meteo Json")
 }
+
+fetchData()
