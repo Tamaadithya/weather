@@ -1,16 +1,25 @@
+:root{
+  --bg-color: #212529;
+}
 * {
     padding: 0;
     margin: 0;
     font-family: Cambria;
     box-sizing: border-box;
   }
-
-.container{
-    width: 90%;
-    max-width: 470px;
-    background: black;
-    margin: 100px auto 0;
-    border-radius: 20px;
-    padding: 40px 35px;
-    align-items: center;
+body{
+  min-height: 100vh;
+  background-color: var(--bg-color1);
+  color: white;
+  padding: 0 15px;
+}
+.header {
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-color1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 15px 0;
 }
