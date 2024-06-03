@@ -1,16 +1,9 @@
-async function fetchData() {
-  let searchCity = 'jepang'
-  let apiKey = `APIKEY`
-  const responseOpenWeather = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${apiKey}`)
-  const responseOpenWeatherJson = await responseOpenWeather.json()
-  console.log(responseOpenWeatherJson, "<< response Open Weather Json")
+let CityInput = document.getElementById('city_input'),
+searchBtn= document.getElementById('searchBtn'),
+API_key = '6564e172e573ba3e5de617695b4ac6b7';
 
-  let lat = responseOpenWeatherJson.coord.lat;
-  let lon = responseOpenWeatherJson.coord.lon;
-  
-  const responseOpenMeteo = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min&timezone=Asia%2FBangkok`)
-  const responseOpenMeteoJson = await responseOpenMeteo.json()
-  console.log(responseOpenMeteoJson, "<< response Open Meteo Json")
+function getCityCoordinates(){
+  let cityName = CityInput.value.trim();
+ console.log(cityName);
 }
-
-fetchData()
+searchBtn.addEventListener('click', getCityCoordinates);

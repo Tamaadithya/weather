@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>//Tugas Weather//</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <link rel="stylesheet" href="weather.css">
 </head>
 <body>
@@ -12,22 +14,145 @@
 
     <div class="container">
         <div class="header">
-            <h2 style="color: black;">TamaWeather</h2>
+            <h2>TamaWeather</h2>
             <div class="Search">
-                <input type="text" name="city" id="city_input" placeholder="Enter city">
-                <button type="button" id="searchBtn"> 
-                    <img src="cc.png">
+                <input type="text" name="city" id="city_input" placeholder="Enter city name">
+                <button type="button" id="searchBtn">
+                    <i class="fa fa-search"></i> Search
                 </button>
             </div>
         </div>
+        <div class="Weather">
+            <div class="Weather-kiri">
+                <div class="card">
+                    <div class="Weather-today">
+                        <div class="details">
+                            <p>Hari Ini</p>
+                            <h2>_____&deg;C</h2>
+                            <p>_____</p>
+                        </div>
+                        <div class="Weather-icon">
+                            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="Card-footer">
+                        <p><i class="fa fa-map-marker"></i>_____</p>
+                        <p><i class="fa fa-calendar"></i>_____</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <h2>Ramalan cuaca</h2>
+                    <div class="besok">
+                        <div class="besokitem">
+                            <div class="besokicon">
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                                <span>_____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                        <div class="besokitem">
+                            <div class="besokicon">
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                                <span>_____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                        <div class="besokitem">
+                            <div class="besokicon">
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                                <span>_____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                        <div class="besokitem">
+                            <div class="besokicon">
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                                <span>_____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                        <div class="besokitem">
+                            <div class="besokicon">
+                                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                                <span>_____&deg;C</span>
+                            </div>
+                            <p>_____</p>
+                            <p>_____</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="Weather-kanan">
+                <h2>highlights</h2>
+                <div class="highlights">
+                    <div class="card">
+                        <div class="card-head">
+                            <p>humidity</p>
+                        </div>
+                        <div class="card-item">
+                            <i class="fa-light fa-droplet fa2x"></i>
+                            <h2 id="Humidty">_____%</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <p>pressure</p>
+                        </div>
+                        <div class="card-item">
+                            <i class="fa-light fa-compass fa2x"></i>
+                            <h2 id="pressure">_____hPa</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <p>Visibility</p>
+                        </div>
+                        <div class="card-item">
+                            <i class="fa-light fa-eye fa2x"></i>
+                            <h2 id="Visibility">_____km</h2>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-head">
+                            <p>Wind</p>
+                        </div>
+                        <div class="card-item">
+                            <i class="fa-light fa-location-arrow fa2x"></i>
+                            <h2 id="Visibility">_____m/s</h2>
+                        </div>
+                    </div>
+                </div>
+                <h2>today at</h2>
+                <div class="hourly-forecast">
+                    <div class="card">
+                        <p>9 AM</p>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                        <p>_____&deg;C</p>
+                    </div>
+                    <div class="card">
+                        <p>9 AM</p>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                        <p>_____&deg;C</p>
+                    </div>
+                    <div class="card">
+                        <p>9 AM</p>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                        <p>_____&deg;C</p>
+                    </div>
+                    <div class="card">
+                        <p>9 AM</p>
+                        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Hujan berawan">
+                        <p>_____&deg;C</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <script>
-        function search() {
-            let searchCity = document.getElementById('searchText').value
-            // for () {
-
-            // }
-        }
-    </script>
+    <script src="weather.js"></script>
 </body>
 </html>
