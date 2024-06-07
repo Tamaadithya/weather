@@ -334,7 +334,16 @@ for (let i = 0; i < data7days.daily.temperature_2m_max.length; i++) {
   <p>${data7days.daily.temperature_2m_max[i]}&deg;C</p>
 </div>` 
 }
-
+const responseHumidty = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${data.results[0].latitude}&longitude=${data.results[0].longitude}&current=temperature_2m,relative_humidity_2m,weather_code,precipitation,pressure_msl,wind_speed_10m`)
+  const Humidty = await responseHumidty.json();
+    console.log(Humidty, `humidity`);
+      document.getElementById(`Humidity`).innerHTML = Humidty.current.relative_humidity_2m+`%`
+      document.getElementById(`current-temperature`).innerHTML = Humidty.current.temperature_2m+`&deg;C`
+      document.getElementById(`pressure`).innerHTML = Humidty.current.pressure_msl+`hPa`
+      document.getElementById(`Precipitation`).innerHTML = Humidty.current.precipitation+`mm`
+      document.getElementById(`Wind`).innerHTML = Humidty.current.wind_speed_10m+`m/s`
+      document.getElementById(`location`).innerHTML = cityName
+      document.getElementById(`imageweather`).innerHTML = `<img src=${wmo[Humidty.current.weather_code].day.image} alt="${wmo[Humidty.current.weather_code].day.description}"></img>`
 }
 fetchWeather()
 
